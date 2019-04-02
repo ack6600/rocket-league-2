@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 
 public class RocketLeague2 {
@@ -22,15 +23,26 @@ public class RocketLeague2 {
         root.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         objectHandler = new ObjectHandler();
-        objectHandler.addObject(new GameObject(new File("dom.jpg"), 50, 50));
+        objectHandler.addObject(new TestGameObject(new File("dom.jpg"), 50, 50));
 
         graphicsHandler = new GraphicsHandler(objectHandler, jPanel);
         physicsHandler = new PhysicsHandler(objectHandler);
+        physicsHandler.setControls(new int[]{
+                KeyEvent.VK_RIGHT,
+                KeyEvent.VK_LEFT,
+                KeyEvent.VK_UP,
+                KeyEvent.VK_DOWN
+        });
+        root.addKeyListener(physicsHandler);
     }
 
     public void start(){
         root.setVisible(true);
         graphicsHandler.start();
-        physicsHandler.start();
+        try {
+            physicsHandler.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -3,7 +3,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class ObjectHandler {
     private ReentrantLock characterLock;
-    private ArrayList<GameObject> gameObjects;
+    private ArrayList<TestGameObject> gameObjects;
     private int size;
 
     public ObjectHandler(){
@@ -11,7 +11,7 @@ public class ObjectHandler {
         gameObjects = new ArrayList<>();
     }
 
-    public void addObject(GameObject toAdd){
+    public void addObject(TestGameObject toAdd){
         characterLock.lock();
         try{
             gameObjects.add(toAdd);
@@ -21,7 +21,7 @@ public class ObjectHandler {
         }
     }
 
-    public GameObject getObject(int index){
+    public TestGameObject getObject(int index){
         characterLock.lock();
         try{
             return gameObjects.get(index);

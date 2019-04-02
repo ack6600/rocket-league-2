@@ -17,7 +17,7 @@ public class GraphicsHandler {
                     long startTime = System.nanoTime();
                     int size = objectHandler.getSize();
                     for(int i = 0; i < size; i++){
-                        GameObject toDraw = objectHandler.getObject(i);
+                        TestGameObject toDraw = objectHandler.getObject(i);
                         frame.getGraphics().drawImage(toDraw.getSprite(), toDraw.getCoords()[0], toDraw.getCoords()[1], null);
                     }
                     int fps = (int) (1/((double)(System.nanoTime() - startTime)/1000000000.0));
