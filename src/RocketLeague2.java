@@ -3,10 +3,10 @@ import java.awt.event.KeyEvent;
 import java.io.File;
 
 public class RocketLeague2 {
-    ObjectHandler objectHandler;
-    GraphicsHandler graphicsHandler;
-    PhysicsHandler physicsHandler;
-    JFrame root;
+    private ObjectHandler objectHandler;
+    private GraphicsHandler graphicsHandler;
+    private PhysicsHandler physicsHandler;
+    private JFrame root;
 
     public static void main(String[] args) {
         RocketLeague2 game = new RocketLeague2();
@@ -23,7 +23,9 @@ public class RocketLeague2 {
         root.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         objectHandler = new ObjectHandler();
-        objectHandler.addObject(new TestGameObject(new File("dom.jpg"), 50, 50));
+        objectHandler.addObject(new TestGameObject(new File("dom.jpg"), 0, 0));
+        objectHandler.addObject(new TestGameObject(new File("gioia1.jpg"), 50, 50));
+        objectHandler.addObject(new TestGameObject(new File("gioia2.jpg"), 200, 200));
 
         graphicsHandler = new GraphicsHandler(objectHandler, jPanel);
         physicsHandler = new PhysicsHandler(objectHandler);

@@ -1,10 +1,11 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class TestGameObject {
+public class TestGameObject extends GameObject{
     private double x, y;
     private BufferedImage image;
     private long lastUpdateTime;
@@ -32,14 +33,24 @@ public class TestGameObject {
 
     public void runPhysics(int[] controls, boolean[] statuses){
         long deltaTime = System.nanoTime() - lastUpdateTime;
-        if(statuses[0])
-            x += speed * ((double) deltaTime / 1e9d);
-        if(statuses[1])
-            x -= speed * ((double) deltaTime / 1e9d);
-        if(statuses[2])
-            y -= speed * ((double) deltaTime / 1e9d);
-        if(statuses[3])
-            y += speed * ((double) deltaTime / 1e9d);
+        for(int i = 0; i < controls.length; i++){
+            if(controls[i] == KeyEvent.VK_UP) {
+                if (statuses[i])
+                    y -= speed * ((double) deltaTime / 1e9d);
+            }
+            if(controls[i] == KeyEvent.VK_DOWN){
+                if(statuses[i])
+                    y += speed * ((double) deltaTime / 1e9d);
+            }
+            if(controls[i] == KeyEvent.VK_RIGHT) {
+                if (statuses[i])
+                    x += speed * ((double) deltaTime / 1e9d);
+            }
+            if(controls[i] == KeyEvent.VK_LEFT){
+                if(statuses[i])
+                    x -= speed * ((double) deltaTime / 1e9d);
+            }
+        }
         lastUpdateTime = System.nanoTime();
     }
 }
