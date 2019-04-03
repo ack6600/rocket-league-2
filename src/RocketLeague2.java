@@ -25,7 +25,7 @@ public class RocketLeague2 {
         objectHandler = new ObjectHandler();
         objectHandler.addObject(new TestGameObject(new File("dom.jpg"), 0, 0));
         objectHandler.addObject(new TestGameObject(new File("gioia1.jpg"), 50, 50));
-        objectHandler.addObject(new TestGameObject(new File("gioia2.jpg"), 200, 200));
+        objectHandler.addObject(new TestGameObject(new File("gioia2.jpg"), 200, 2030));
 
         graphicsHandler = new GraphicsHandler(objectHandler, jPanel);
         physicsHandler = new PhysicsHandler(objectHandler);
