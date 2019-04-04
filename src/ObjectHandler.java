@@ -11,7 +11,7 @@ public class ObjectHandler {
         gameObjects = new ArrayList<>();
     }
 
-    public void addObject(TestGameObject toAdd){
+    public void addObject(GameObject toAdd){
         characterLock.lock();
         try{
             gameObjects.add(toAdd);

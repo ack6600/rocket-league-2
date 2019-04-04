@@ -9,15 +9,15 @@ public class RocketLeague2 {
     private JFrame root;
 
     public static void main(String[] args) {
-        RocketLeague2 game = new RocketLeague2();
+        RocketLeague2 game = new RocketLeague2(640, 480);
         game.start();
     }
 
-    public RocketLeague2(){
+    public RocketLeague2(int width, int height){
         root = new JFrame();
-        root.setSize(640, 480);
+        root.setSize(width, height);
         JPanel jPanel = new JPanel();
-        jPanel.setSize(640,480);
+        jPanel.setSize(width, height);
         jPanel.setVisible(true);
         root.add(jPanel);
         root.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -25,7 +25,8 @@ public class RocketLeague2 {
         objectHandler = new ObjectHandler();
         objectHandler.addObject(new TestGameObject(new File("dom.jpg"), 0, 0));
         objectHandler.addObject(new TestGameObject(new File("gioia1.jpg"), 50, 50));
-        objectHandler.addObject(new TestGameObject(new File("gioia2.jpg"), 200, 2030));
+        objectHandler.addObject(new TestGameObject(new File("gioia2.jpg"), 200, 200));
+        objectHandler.addObject(new GroundObject(new File("ground.png"), height));
 
         graphicsHandler = new GraphicsHandler(objectHandler, jPanel);
         physicsHandler = new PhysicsHandler(objectHandler);
