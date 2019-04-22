@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class GroundObject extends CollisionObject {
+public class GroundObject extends GameObject {
     private int x, y;
     private BufferedImage sprite;
 
@@ -15,7 +15,7 @@ public class GroundObject extends CollisionObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.y = windowHeight - 2 * sprite.getHeight();
+        this.y = windowHeight - (2 * sprite.getHeight() + 6);
         this.x = 0;
     }
     @Override
