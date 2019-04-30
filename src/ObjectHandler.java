@@ -30,6 +30,10 @@ public class ObjectHandler {
         }
     }
 
+    public GameObject[] getAllObjects(){
+        return gameObjects.toArray(new GameObject[0]);
+    }
+
     public int getSize(){
         characterLock.lock();
         try{

@@ -23,9 +23,7 @@ public class RocketLeague2 {
         root.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         objectHandler = new ObjectHandler();
-        objectHandler.addObject(new TestGameObject(new File("dom.jpg"), 0, 0));
-        objectHandler.addObject(new TestGameObject(new File("gioia1.jpg"), 50, 50));
-        objectHandler.addObject(new TestGameObject(new File("gioia2.jpg"), 200, 200));
+        objectHandler.addObject(new PhysicsObject(50, 50, 50, 50, new File("gioia1.jpg"), 20));
         objectHandler.addObject(new GroundObject(new File("ground.png"), height));
 
         graphicsHandler = new GraphicsHandler(objectHandler, jPanel);

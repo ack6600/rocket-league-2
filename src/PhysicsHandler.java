@@ -14,8 +14,10 @@ public class PhysicsHandler implements KeyListener {
             public void run() {
                 while(true){
                     int size = objectHandler.getSize();
-                    for(int i = 0; i < size; i++)
+                    for(int i = 0; i < size; i++) {
                         objectHandler.getObject(i).runPhysics(controlKeycodes, statuses);
+                        objectHandler.getObject(i).runCollisions(objectHandler.getAllObjects());
+                    }
                 }
             }
         };

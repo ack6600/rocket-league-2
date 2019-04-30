@@ -1,5 +1,4 @@
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -35,4 +34,9 @@ public class GroundObject extends GameObject {
 
     @Override
     public void runPhysics(int[] controls, boolean[] statuses) {}
+
+    @Override
+    public void runCollisions(GameObject[] allObjects) {
+
+    }
 }
