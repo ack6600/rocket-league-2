@@ -22,6 +22,8 @@ public class GraphicsHandler {
                     }
                     int fps = (int) (1/((double)(System.nanoTime() - startTime)/1000000000.0));
                     frame.getGraphics().drawString(String.valueOf(fps), 20, 20);
+                    frame.getGraphics().drawString(String.valueOf(RocketLeague2.getScores()[0]), 300, 20);
+                    frame.getGraphics().drawString(String.valueOf(RocketLeague2.getScores()[1]), 340, 20);
                     jPanel.getGraphics().drawImage(frame, 0, 0, null);
                 }
             }

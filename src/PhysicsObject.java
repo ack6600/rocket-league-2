@@ -46,7 +46,7 @@ public class PhysicsObject extends GameObject {
     }
 
     @Override
-    public void runPhysics(int[] controls, boolean[] statuses) {
+    public void runPhysics(int[] controls, boolean[] statuses, GameObject[] allObjects) {
         ySpeed = updateTimedVariable(KeyEvent.VK_DOWN, KeyEvent.VK_UP, controls, statuses, lastUpdateTime, ySpeed, yAccel);
         xSpeed = updateTimedVariable(KeyEvent.VK_RIGHT, KeyEvent.VK_LEFT, controls, statuses, lastUpdateTime, xSpeed, xAccel);
         ySpeed = doFriction(ySpeed, lastUpdateTime);
@@ -75,8 +75,4 @@ public class PhysicsObject extends GameObject {
     }
 
 
-    @Override
-    public void runCollisions(GameObject[] allObjects) {
-
-    }
 }
